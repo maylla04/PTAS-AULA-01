@@ -14,9 +14,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/user', (req, res) => {
-    const { name, password } = req.body;
+    const { name, email, password } = req.body;
     User.create({
         name: name,
+        email: email,
         password: password
     }).then(() => {
         res.json('Cadastro de usuário realizado com sucesso!');
